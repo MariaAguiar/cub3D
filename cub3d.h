@@ -6,7 +6,7 @@
 /*   By: mnascime <mnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 11:37:15 by paugonca          #+#    #+#             */
-/*   Updated: 2023/12/13 19:03:28 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/12/14 17:58:14 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,6 +234,7 @@ void		init_player_pos(t_cub3d *cub, int x, int y);
 char		**solo_matrix(int rows, int cols);
 void		insert_map_tail(t_list *list, int *data, int len);
 void		list_to_map(t_list *list, t_cub3d *cub);
+int			check_door_txtrs(t_cub3d *cub);
 int			fill_txtrs_utils1(t_cub3d *cub, int type, int i);
 int			fill_txtrs_utils2(t_cub3d *cub, int type, int i);
 int			fill_txtrs(t_cub3d *cub, int type, int i);

@@ -6,7 +6,7 @@
 /*   By: mnascime <mnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 14:54:46 by mnascime          #+#    #+#             */
-/*   Updated: 2023/12/10 12:19:32 by mnascime         ###   ########.fr       */
+/*   Updated: 2023/12/14 17:59:20 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,7 @@ int	insert_txtrs(t_cub3d *cub, char *line, int txtr_type)
 	cub->txtrs[txtr_type]->path = split;
 	cub->txtrs[txtr_type]->type = txtr_type;
 	cub->txtrs[txtr_type]->levels = i;
-	if (!insert_txtrs_utils(cub, txtr_type, line, i))
+	if (!insert_txtrs_utils(cub, txtr_type, line, i) || !check_door_txtrs(cub))
 		return (0);
 	return (1);
 }

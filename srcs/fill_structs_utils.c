@@ -6,7 +6,7 @@
 /*   By: mnascime <mnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:48:19 by paugonca          #+#    #+#             */
-/*   Updated: 2023/12/10 12:23:02 by mnascime         ###   ########.fr       */
+/*   Updated: 2023/12/14 17:57:50 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,26 @@ int	fill_txtrs_utils2(t_cub3d *cub, int type, int i)
 	&cub->txtrs[type]->bpp[counter], &cub->txtrs[type]->line_length[counter], \
 	&cub->txtrs[type]->endian[counter]);
 	cub->txtrs[type]->addrs[counter] = NULL;
+	return (1);
+}
+
+int	check_door_txtrs(t_cub3d *cub)
+{
+	int	i;
+	int	j;
+	int	doors;
+
+	i = -1;
+	doors = 0;
+	while (cub->map->map[i++])
+	{
+		j = -1;
+		while (cub->map->map[i][++j])
+			if (cub->map->map[i][j] == DOOR)
+				doors++;
+	}
+	if (doors && !cub->txtrs[DO])
+		return (print_err_ret("no door textures found"));
 	return (1);
 }
 
